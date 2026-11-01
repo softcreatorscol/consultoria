@@ -12,6 +12,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/estilos.css">
+<style>
+/* Solo Inicio: texto de "Quiénes somos" siempre visible */
+.manifesto p.manif-static{color:var(--navy)}
+.manifesto p.manif-static .hl{color:var(--blue)}
+/* Solo Inicio: franja de normas compatible con iPhone (Safari) */
+.marquee{-webkit-mask-image:none}
+.marquee-track{display:flex!important;width:max-content;flex-wrap:nowrap;
+  -webkit-animation:mqx 38s linear infinite!important;animation:mqx 38s linear infinite!important;
+  will-change:transform;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.marquee-track span{flex-shrink:0}
+@-webkit-keyframes mqx{from{-webkit-transform:translate3d(0,0,0)}to{-webkit-transform:translate3d(-50%,0,0)}}
+@keyframes mqx{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media (max-width:640px){.marquee-track{-webkit-animation-duration:26s!important;animation-duration:26s!important}}
+</style>
 </head>
 <body data-page="inicio">
 <div class="grain" aria-hidden="true"></div>
@@ -75,7 +89,7 @@
     <div class="man-grid">
     <div>
     <div class="label rv">Quiénes somos</div>
-    <p id="manifesto" style="margin-top:36px">Somos su aliado estratégico para garantizar el [cumplimiento regulatorio] y la [excelencia operacional]. Acompañamos a su empresa en la implementación, mantenimiento y fortalecimiento de sistemas de cumplimiento, prevención de riesgos y [estándares internacionales].</p>
+    <p class="manif-static rv" style="margin-top:36px">Somos su aliado estratégico para garantizar el <span class="hl">cumplimiento regulatorio</span> y la <span class="hl">excelencia operacional</span>. Acompañamos a su empresa en la implementación, mantenimiento y fortalecimiento de sistemas de cumplimiento, prevención de riesgos y <span class="hl">estándares internacionales</span>.</p>
     <div class="meta">
       <div class="rv"><b>Blindaje jurídico</b><span>Sistemas de riesgo gestionados por especialistas.</span></div>
       <div class="rv d1"><b>Procesos claros</b><span>Requisitos complejos traducidos a la operación diaria.</span></div>
